@@ -1,0 +1,44 @@
+const num = [0, 1, 0, 3, 12];
+
+let zeroC = 0; 
+
+
+for (let i = 0; i < num.length; i++) {
+  if (num[i] !== 0) {
+    num[zeroC] = num[i];
+    zeroC++;
+  }
+}
+
+
+while (zeroC < num.length) {
+  num[zeroC] = 0;
+  zeroC++;
+}
+function firstUniqueChar(s) {
+  const charCount = new Map();
+
+ 
+  for (let i = 0; i < s.length; i++) {
+    const char = s[i];
+    charCount.set(char, charCount.get(char) + 1 || 1);
+  }
+
+
+  for (let i = 0; i < s.length; i++) {
+    const char = s[i];
+    if (charCount.get(char) === 1) {
+      return i;
+    }
+  }
+
+ 
+  return -1;
+}
+
+// Example usage:
+const s = "leetcode";
+const firstUniqueIndex = firstUniqueChar(s);
+console.log(firstUniqueIndex); 
+
+console.log(num);
