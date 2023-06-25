@@ -1,0 +1,19 @@
+const num = [0, 1, 0, 3, 12];
+
+let zeroC = 0; 
+
+
+for (let i = 0; i < num.length; i++) {
+  if (num[i] !== 0) {
+    num[zeroC] = num[i];
+    zeroC++;
+  }
+}
+
+
+while (zeroC < num.length) {
+  num[zeroC] = 0;
+  zeroC++;
+}
+
+console.log(num);
